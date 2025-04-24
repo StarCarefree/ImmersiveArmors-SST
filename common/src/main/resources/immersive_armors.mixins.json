@@ -1,0 +1,23 @@
+{
+	"required": false,
+	"minVersion": "0.7",
+	"package": "immersive_armors.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"MixinEnchantmentHelper",
+		"MixinFollowTargetGoal",
+		"MixinLivingEntity",
+		"MobEntityMixin"
+	],
+	"client": [
+		"InGameHudMixin",
+		"MixinArmorFeatureRenderer",
+		"MixinCapeFeatureRenderer",
+		"MixinItemRenderer",
+		"MixinMinecraftClient",
+		"MixinPlayerEntity"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "immersive_armors",
+  "version": "${version}",
+  "name": "Immersive Armors",
+  "description": "A lot of unique and vanilla-faithful armor sets.",
+  "authors": [
+    "Luke100000"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/immersive-armors",
+    "sources": "https://github.com/Luke100000/ImmersiveArmors",
+    "issues": "https://github.com/Luke100000/ImmersiveArmors/issues"
+  },
+  "license": "GPL-3.0-only",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "immersive_armors.fabric.CommonFabric"
+    ],
+    "client": [
+      "immersive_armors.fabric.ClientFabric"
+    ],
+    "modmenu": [
+      "immersive_armors.config.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "immersive_armors.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "java": ">=8",
+    "fabric-api-base": ">=0.1.0"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.com/invite/agxcvAdj2a"
+      }
+    }
+  }
+}

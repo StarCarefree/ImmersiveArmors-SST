@@ -1,0 +1,26 @@
+modLoader = "javafml"
+loaderVersion="[47,)"
+license = "GPL-3.0-only"
+
+[[mods]]
+modId = "immersive_armors"
+version = "1.7.7-sst"
+displayName = "Immersive Armors"
+authors = "Luke100000 & TheFlareStar"
+
+logoFile = "logoFile.png"
+itemIcon = "immersive_armors:divine_chestplate"
+
+[[dependencies.immersive_armors]]
+modId = "minecraft"
+mandatory = true
+versionRange="[1.20.1,1.21)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.immersive_armors]]
+modId = "forge"
+mandatory = true
+versionRange="[47,)"
+ordering = "NONE"
+side = "BOTH"
