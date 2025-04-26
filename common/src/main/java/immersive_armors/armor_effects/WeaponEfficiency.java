@@ -17,21 +17,16 @@ import java.util.stream.Stream;
 
 public class WeaponEfficiency extends ArmorEffect {
     private final float damage;
-    private final Class weapon;
-    private final String weaponName;
 
-    public WeaponEfficiency(float damage, Class weapon, String weaponName) {
+    public WeaponEfficiency(float damage) {
         this.damage = damage;
-        this.weapon = weapon;
-        this.weaponName = weaponName;
     }
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
 
-        MutableText weaponText = Text.translatable("armorEffect.weaponEfficiency." + weaponName);
-        tooltip.add(Text.translatable("armorEffect.weaponEfficiency", (int)(damage * 100), weaponText).formatted(Formatting.GOLD));
+        tooltip.add(Text.translatable("armorEffect.weaponEfficiency", (int)(damage * 100)).formatted(Formatting.GOLD));
     }
 
     @Override
@@ -39,12 +34,7 @@ public class WeaponEfficiency extends ArmorEffect {
         if (!source.isIndirect() && source.getAttacker() instanceof LivingEntity attacker) {
             //todo verify indirect on arrows
             if (isPrimaryArmor(armor, attacker)) {
-                boolean hasAxe = Stream.of(attacker.getEquippedStack(EquipmentSlot.MAINHAND), attacker.getEquippedStack(EquipmentSlot.OFFHAND))
-                        .filter(Objects::nonNull)
-                        .anyMatch(v -> weapon.isInstance(v.getItem()));
-                if (hasAxe) {
                     amount *= (1.0f + getSetCount(armor, attacker) * damage);
-                }
             }
         }
         return amount;

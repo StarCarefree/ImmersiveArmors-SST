@@ -34,6 +34,7 @@ public class WitherArmorEffect extends ArmorEffect {
     public float applyArmorToDamage(LivingEntity entity, DamageSource source, float amount, ItemStack armor) {
         if (isPrimaryArmor(armor, entity) && source.getAttacker() instanceof LivingEntity attacker && !attacker.isFireImmune()) {
             attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, wither * getSetCount(armor, entity)));
+            attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, wither * getSetCount(armor, entity)));
         }
 
         if (source.isOf(DamageTypes.WITHER)) {

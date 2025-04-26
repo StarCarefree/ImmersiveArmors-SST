@@ -43,22 +43,20 @@ public interface Items {
             .enchantability(0)
             .effect(new WitherArmorEffect(1.0f, 10))
             .hideCape()
-            .toughness(5)
+            .toughness(4)
             .equipSound(SoundEvents.ENTITY_WITHER_SKELETON_AMBIENT)
             .antiSkeleton()
             .weight(-0.01f));
 
     ExtendedArmorMaterial WARRIOR_ARMOR = registerSet(new ExtendedArmorMaterial("warrior")
-            .addLoot("minecraft:chests/village/village_armorer", 1.0f)
-            .addLoot("minecraft:chests/shipwreck_supply", 1.0f)
-            .protectionAmount(2, 5, 6, 2)
-            .durabilityMultiplier(15)
+            .protectionAmount(5, 6, 6, 4)
+            .durabilityMultiplier(42)
             .repairIngredient(() -> Ingredient.ofItems(net.minecraft.item.Items.IRON_INGOT))
-            .toughness(1.0f)
-            .enchantability(5)
+            .toughness(3)
+            .enchantability(2)
             .hideCape()
             .effect(new BerserkArmorEffect(0.2f))
-            .effect(new WeaponEfficiency(0.05f, AxeItem.class, "axe"))
+            .effect(new WeaponEfficiency(0.1f))
             .equipSound(SoundEvents.ITEM_ARMOR_EQUIP_IRON));
 
     ExtendedArmorMaterial HEAVY_ARMOR = registerSet(new ExtendedArmorMaterial("heavy")
@@ -105,7 +103,7 @@ public interface Items {
             .effect(new DivineArmorEffect(820))
             .color(11546150)
             .hideCape()
-            .toughness(5.8f)
+            .toughness(5)
             .equipSound(SoundEvents.ITEM_ARMOR_EQUIP_IRON));
 
     ExtendedArmorMaterial PRISMARINE_ARMOR = registerSet(new ExtendedArmorMaterial("prismarine")

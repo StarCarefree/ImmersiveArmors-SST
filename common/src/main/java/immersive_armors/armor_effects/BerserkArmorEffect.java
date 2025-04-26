@@ -22,6 +22,7 @@ public class BerserkArmorEffect extends ArmorEffect {
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
 
+        tooltip.add(Text.translatable("armorEffect.vulnerability", 10).formatted(Formatting.DARK_RED));
         tooltip.add(Text.translatable("armorEffect.berserk", (int) (berserk * 100)).formatted(Formatting.RED));
     }
 
@@ -33,4 +34,12 @@ public class BerserkArmorEffect extends ArmorEffect {
         }
         return amount;
     }
+    @Override
+    public float applyArmorToDamage(LivingEntity wearer, DamageSource source, float amount, ItemStack armor) {
+        if (isPrimaryArmor(armor, wearer)) {
+            return amount * 1.10f;
+        }
+        return amount;
+    }
+
 }
